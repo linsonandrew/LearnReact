@@ -14,6 +14,9 @@ export class App extends React.Component{
     state = {
       count : "day",
     }
+    patt = (e) => {
+      alert("Thank you for patting me!")
+    }
     render(){
       return(
         <div className={this.state.count}>
@@ -27,7 +30,8 @@ export class App extends React.Component{
         }
         }>{this.state.count}</button>
         
-        {/* <Button /> */}
+        <pat onMouseMove = {this.patt}></pat>
+
         <Header />
         <Middle skills = {['HTML','CSS']}/>
         <Img />

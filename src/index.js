@@ -19,13 +19,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import lanny from './linson.jpeg';
 import "./index.css";
+import {App} from './App'
 const headerStyles = {
   backgroundColor: '#61DBFB',
   fontFamily: 'Helvetica Neue',
   padding: 25,
   lineHeight: 1.5,
 }
-class Header extends React.Component{
+export class Header extends React.Component{
   render(){
     return(
       <header style={headerStyles}>
@@ -90,7 +91,7 @@ const Boxy =(props) =>  {
   )
 }
 
-const Middle = (props) =>  {
+export const Middle = (props) =>  {
   const skillset  = (props.skills.map((skill) => <li className='midtext'>{skill}</li>))
   
   return(
@@ -107,7 +108,7 @@ const Middle = (props) =>  {
 }
 
 
-const Img = () => {
+export const Img = () => {
   
   return(
     <div className = "linson" >
@@ -115,16 +116,14 @@ const Img = () => {
     </div>
   )
 }
-const sayHiBack = (what) => (
-  alert("Hi Rajesh")
-)
-const Button = (props) => {
+
+export const Button = (props) => {
   return(
   <button onClick={props.onClickk} >Hi</button>
   )
 }
 
-const Footer = () => {
+export const Footer = () => {
   return(
   <footer className="foot" >
     <p>thanks lol!!</p>
@@ -134,37 +133,9 @@ const Footer = () => {
 //count : 1 for day and 2 for night 
 
 
-
-class Container extends React.Component{
-  state = {
-    count : "day",
-  }
-  render(){
-    return(
-      <div className={this.state.count}>
-      <button className='Mode' onClick={()=>{
-        if(this.state.count === "day"){
-          this.setState({count : "night",})
-        }
-        else{
-          this.setState({count : "day",})
-        }
-      }
-      }>{this.state.count}</button>
-      
-      {/* <Button /> */}
-      <Header />
-      <Middle skills = {['HTML','CSS']}/>
-      <Img />
-      <Button text = 'Rakesh' onClickk={sayHiBack}/>
-      <Footer />
-      </div>
-    ) 
-  }
-}
 //Asignment 
-const mountele  = document.getElementById("root")
 
-ReactDOM.render(<Container />,mountele)
+const mountele  = document.getElementById("root")
+ReactDOM.render(<App />,mountele)
 
 

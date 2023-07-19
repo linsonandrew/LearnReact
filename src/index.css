@@ -45,3 +45,14 @@
     grid-template-columns: auto auto auto auto auto auto auto auto;
     padding: 10px;
 }
+
+pat{
+    display : inline-flex;
+    left: 775px;
+    right: 500px;
+    top: 875px;
+    position: absolute;
+    height: 50px;
+    width : 50px;
+    text-align: center;
+}
