@@ -7,7 +7,7 @@ import {Footer} from './index.js'
 import {Button} from './index.js'
 
 const sayHiBack = (what) => (
-    alert("Hi Rajesh")
+    alert("Hi " `{this.state.firstName}`)
 )
 
 export class App extends React.Component{

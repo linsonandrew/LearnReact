@@ -91,20 +91,35 @@ const Boxy =(props) =>  {
   )
 }
 
-export const Middle = (props) =>  {
-  const skillset  = (props.skills.map((skill) => <li className='midtext'>{skill}</li>))
+
+export class Middle extends React.Component{
+  state = {
+    firstName: "",
+  }
+  skillset  = (this.props.skills.map((skill) => <li className='midtext'>{skill}</li>))
   
+  handleFS = (e) => {
+    console.log(e.key)
+    
+  }
+  render(){
   return(
   <main >
     <p className='midtext'>God Bless!!</p>
     <p className='midtext'>Skills: </p>
-    <ul >{skillset}</ul>
+    <ul >{this.skillset}</ul>
     <div>{Butt()}</div>
 
     <Boxy days = "31" />
+    <label>Woof : </label>
+    <input type = 'text' 
+      placeholder = 'First Name' 
+      name='firstName'
+      onChange= {this.handleFS}
+    /> 
     
   </main>
-  )
+  )}
 }
 
 
